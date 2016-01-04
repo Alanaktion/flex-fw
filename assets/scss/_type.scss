@@ -1,0 +1,18 @@
+/* Typography */
+.site {
+	font-family: $font-family;
+}
+code, pre {
+	font-family: $font-family-mono;
+}
+p {
+	margin-top: 0;
+	margin-bottom: $spacer;
+}
+@for $i from 1 through 6 {
+	h#{$i} {
+		font-weight: normal;
+		margin-top: $spacer;
+		margin-bottom: $spacer / 2;
+	}
+}

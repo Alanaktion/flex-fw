@@ -1,0 +1,14 @@
+/* Media Object */
+.media {
+	display: flex;
+	align-items: flex-start;
+	&.reverse {
+		align-items: flex-start;
+	}
+	.media-figure {
+		margin-right: $spacer;
+	}
+	.media-body {
+		flex: 1;
+	}
+}

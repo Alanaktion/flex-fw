@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Flexbox Framework</title>
+		<link rel="stylesheet" href="assets/css/style.css" charset="utf-8">
+	</head>
+	<body class="site">
+		<header class="site-header">
+			<div class="container">
+				<div class="row">
+					<div class="col-xs-auto">
+						<h1>Flexbox Framework</h1>
+					</div>
+					<div class="col-xs-auto col-center text-right">
+						A modern grid system
+					</div>
+				</div>
+			</div>
+		</header>
+		<main class="site-content">
+			<div class="container">
+				<h2>A new grid system</h2>
+				<p>Flexbox makes it easy to build a powerful grid system, with support for all kinds of fun things that previously required crazy hacks or simply weren't possible.</p>
+
+				<p class="hidden-sm-up">These examples display best on a larger screen than what you're using now, we recommend getting a tablet or laptop to see what's going on.</p>
+
+				<h3>Basic grid</h3>
+				<p>Each row can include traditional percent-based columns as well as dymamically-sized <code>col-*-auto</code> columns. We've used the Bootstrap 4 grid class conventions and breakpoints to add the familiar <code>container</code>, <code>row</code>, and <code>col-xs-*</code> through <code>col-xl-*</code> classes. Just like in Bootstrap, they can be modified to any level desired including adding more breakpoints and changing the viewport sizes through simple modifications to the <code>_variables.scss</code> file.</p>
+				<div class="row">
+					<div class="col-xs-6">
+						<div class="grid-box">.col-xs-6</div>
+					</div>
+					<div class="col-xs-auto">
+						<div class="grid-box">.col-xs-auto</div>
+					</div>
+					<div class="col-xs-auto">
+						<div class="grid-box">.col-xs-auto</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-xs-auto">
+						<div class="grid-box">.col-xs-auto</div>
+					</div>
+					<div class="col-xs-4">
+						<div class="grid-box">.col-xs-4</div>
+					</div>
+					<div class="col-xs-4">
+						<div class="grid-box">.col-xs-4</div>
+					</div>
+					<div class="col-xs-auto">
+						<div class="grid-box">.col-xs-auto</div>
+					</div>
+					<div class="col-xs-auto">
+						<div class="grid-box">.col-xs-auto</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-xs-auto">
+						<div class="grid-box">.col-xs-auto</div>
+					</div>
+					<div class="col-xs-auto">
+						<div class="grid-box">.col-xs-auto</div>
+					</div>
+					<div class="col-xs-auto">
+						<div class="grid-box">.col-xs-auto</div>
+					</div>
+					<div class="col-xs-auto">
+						<div class="grid-box">.col-xs-auto</div>
+					</div>
+					<div class="col-xs-auto">
+						<div class="grid-box">.col-xs-auto</div>
+					</div>
+				</div>
+
+				<h3>Cell positioning</h3>
+				<p>Flexbox adds the ability to align flex items relative to their parent elements, making cell alignment easy and consistent.</p>
+				<div class="row">
+					<div class="col-xs-auto col-top">
+						<div class="grid-box">.col-top</div>
+					</div>
+					<div class="col-xs-auto col-center">
+						<div class="grid-box">.col-center</div>
+					</div>
+					<div class="col-xs-auto col-bottom">
+						<div class="grid-box">.col-bottom</div>
+					</div>
+					<div class="col-xs-auto">
+						<div class="grid-box">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi.</div>
+					</div>
+				</div>
+			</div>
+		</main>
+		<footer class="site-footer">
+			<div class="container">
+				&copy; Alan Hardman &mdash; Inspired by <a href="https://philipwalton.github.io/solved-by-flexbox/" target="_blank">Solved by Flexbox</a>
+			</div>
+		</footer>
+	</body>
+</html>

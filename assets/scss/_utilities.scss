@@ -1,0 +1,34 @@
+/* Utilities */
+
+// Text
+@each $val in (left, center, right) {
+	.text-#{$val} {
+		text-align: $val;
+	}
+}
+.text-monospace {
+	font-family: $font-family-mono;
+}
+
+// Display
+.hide, .hidden {
+	display: none;
+	visibility: hidden;
+}
+
+// Responsive display
+@each $key, $width in $grid-breakpoints {
+	@if $width > 0 {
+		@media only screen and (min-width: $width) {
+			.hidden-#{$key}-up {
+				display: none !important;
+			}
+		}
+		@media only screen and (max-width: $width) {
+			.hidden-#{$key}-down {
+				display: none !important;
+			}
+		}
+	}
+}
+

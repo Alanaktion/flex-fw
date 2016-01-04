@@ -1,0 +1,34 @@
+/* App-specific styles */
+// This is often the only file that needs to be modified
+
+// Main header and footer
+.site-header {
+	background-color: darken(#fff, 10%);
+	padding-top: $spacer;
+	padding-bottom: $spacer;
+	h1 {
+		font-size: 1.5em;
+		margin-top: 0;
+		margin-bottom: 0;
+	}
+}
+.site-footer {
+	background-color: darken(#fff, 15%);
+	padding-top: $spacer;
+	padding-bottom: $spacer;
+}
+
+// Example box for showing the grid sizing
+.grid-box {
+	background-color: rgba(0, 0, 0, 0.1);
+	padding: $spacer $spacer / 4;
+	text-align: center;
+	font-family: $font-family-mono;
+	font-size: .8em;
+}
+@media only screen and (max-width: #{map-get($grid-breakpoints, "sm")}) {
+	.grid-box {
+		padding: 10px;
+		font-size: 0;
+	}
+}

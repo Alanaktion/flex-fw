@@ -1,0 +1,115 @@
+/* Grid System */
+.site {
+	margin: 0;
+	display: flex;
+	min-height: 100vh;
+	flex-direction: column;
+	.site-content {
+		flex: 1;
+	}
+}
+
+// Responsive container sizing
+.container {
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: $spacer;
+	padding-left: $spacer;
+	padding-right: $spacer;
+}
+@each $key, $width in $container-max-widths {
+	@media only screen and (min-width: #{map-get($grid-breakpoints, $key)}) {
+		.container {
+			max-width: $width;
+		}
+	}
+}
+
+// Basic row with flexbox alignment modifiers
+.row {
+	display: flex;
+	margin-left: -$spacer;
+	margin-right: -$spacer;
+	&:not(:last-child) {
+		margin-bottom: $spacer;
+	}
+}
+.row-top {
+	align-items: flex-start;
+}
+.row-center {
+	align-items: center;
+}
+.row-bottom {
+	align-items: flex-end;
+}
+
+// Basic column with flexbox alignment modifiers
+.col {
+}
+.col-top {
+	align-self: flex-start;
+}
+.col-center {
+	align-self: center;
+}
+.col-bottom {
+	align-self: flex-end;
+}
+
+@mixin grid-generator($columns: $grid-columns, $breakpoints: $grid-breakpoints) {
+	// Base column styles
+	%col {
+		box-sizing: border-box;
+		padding-left: $spacer / 2;
+		padding-right: $spacer / 2;
+		&:first-child {
+			padding-left: $spacer;
+		}
+		&:last-child {
+			padding-right: $spacer;
+		}
+	}
+
+	// Mobile-first full-width columns
+	%col-fw {
+		width: 100%;
+	}
+	@each $key, $width in $breakpoints {
+		.col-#{$key}-auto {
+			@extend %col;
+			@if $width > 0 {
+				@extend %col-fw;
+			} @else {
+				flex: 1;
+			}
+		}
+		@for $i from 1 through $columns {
+			.col-#{$key}-#{$i} {
+				@extend %col;
+				@if $width > 0 {
+					@extend %col-fw;
+				} @else {
+					width: percentage($i / $columns);
+				}
+			}
+		}
+	}
+
+	// Media query'd responsive columns
+	@each $key, $width in $breakpoints {
+		@if $width > 0 {
+			@media only screen and (min-width: $width) {
+				.col-#{$key}-auto {
+					flex: 1;
+				}
+				@for $i from 1 through $columns - 1 {
+					.col-#{$key}-#{$i} {
+						width: percentage($i / $columns);
+					}
+				}
+			}
+		}
+	}
+}
+@include grid-generator();
